@@ -10,23 +10,51 @@
     <div id="form_container">
       <h2>Post as you wish.</h2>
       <form autocomplete="on" method="POST" data-netlify="true">
-        <label for="username">Name</label>
+        <label for="category">CATEGORY</label>
         <input
-          id="username"
+          id="category"
           type="text"
-          name="name"
+          name="category"
+          placeholder="Post category"
+          required
+        />
+
+        <label for="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          placeholder="Title of the post"
+          required
+        />
+
+        <label for="author">Username</label>
+        <input
+          id="author"
+          type="text"
+          name="username"
           placeholder="Your username"
           required
         />
 
-        <label for="form-email">E-mail</label>
+        <label for="date">Date</label>
         <input
-          id="form-email"
-          type="email"
-          name="email"
-          placeholder="Your e-mail"
+          id="date"
+          type="datetime"
+          name="date"
+          placeholder="The date"
           required
         />
+
+        <label for="content">Content</label>
+        <input
+          id="content"
+          type="text"
+          name="content"
+          placeholder="What's on your mind?"
+          required
+        />
+
         <button class="form">Sign up</button>
       </form>
       <span id="additional_info"
