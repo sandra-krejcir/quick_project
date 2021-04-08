@@ -15,15 +15,17 @@ function listPosts(data) {
 }
 
 function showPost(post) {
-  console.log(post);
-  const template = document.querySelector("#allPosts").content;
-  const copy = template.cloneNode(true);
-  copy.querySelector("h4").textContent = post.category;
-  copy.querySelector("h2").textContent = post.title;
-  copy.querySelector(
-    ".info"
-  ).textContent = `written by ${post.username}, ${post.date}`;
-  copy.querySelector(".content").textContent = post.content;
-  const parent = document.querySelector("main");
-  parent.appendChild(copy);
+  if (post.approved) {
+    console.log(post);
+    const template = document.querySelector("#allPosts").content;
+    const copy = template.cloneNode(true);
+    copy.querySelector("h4").textContent = post.category;
+    copy.querySelector("h2").textContent = post.title;
+    copy.querySelector(
+      ".info"
+    ).textContent = `written by ${post.username}, ${post.date}`;
+    copy.querySelector(".content").textContent = post.content;
+    const parent = document.querySelector("main");
+    parent.appendChild(copy);
+  }
 }

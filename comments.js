@@ -1,6 +1,6 @@
 const form = document.querySelector("form");
 
-form.addEventListener("submit", userSubmitted);
+form.addEventListener("submit", userCommented);
 
 function userCommented(evt) {
   evt.preventDefault();
@@ -27,7 +27,7 @@ function userCommented(evt) {
       document.querySelector(".form").disabled = false;
       form.elements.username.value = "";
       form.elements.content.value = "";
-      document.querySelector("p.hidden").classList.remove("hidden");
+      document.querySelector(".hidden").classList.remove("hidden");
     })
     .catch((err) => {
       console.error(err);
