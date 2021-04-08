@@ -16,19 +16,19 @@ function userSubmitted(evt) {
     content: form.elements.content.value,
   };
 
-  document.querySelector("button").disabled = true;
+  document.querySelector(".form").disabled = true;
+
   fetch("https://kea21s-6eb0.restdb.io/rest/posts", {
     method: "POST",
     headers: {
-      "x-apikey": "11d1bb4cb0487a83daeb6f416bcb0b5deea97",
+      "x-apikey": "606d606af55350043100752e",
       "Content-Type": "application/json",
     },
-
     body: JSON.stringify(payload),
   })
     .then((response) => {
       console.log(response);
-      document.querySelector("button").disabled = false;
+      document.querySelector(".form").disabled = false;
       form.elements.category.value = "";
       form.elements.title.value = "";
       form.elements.username.value = "";
