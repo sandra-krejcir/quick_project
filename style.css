@@ -1,0 +1,32 @@
+#form_container {
+  margin-top: 17%;
+  width: 50vw;
+  background: white;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+  padding: 30px 70px 70px 70px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input:valid,
+textarea:valid {
+  border: 1px green solid;
+}
+input:invalid,
+textarea:invalid {
+  border: 1px red solid;
+}
+input:placeholder-shown,
+textarea:placeholder-shown {
+  border: 1px grey solid;
+}
+
+label {
+  font-family: sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
