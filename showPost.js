@@ -24,4 +24,6 @@ function showPost(post) {
     ".info"
   ).textContent = `written by ${post.username}, ${post.date}`;
   copy.querySelector(".content").textContent = post.content;
+  const parent = document.querySelector("main");
+  parent.appendChild(copy);
 }
