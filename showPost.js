@@ -1,11 +1,14 @@
 const url = "https://kea21s-6eb0.restdb.io/rest/posts";
-fetch(url)
-  .then(function (res) {
-    return res.json();
-  })
-  .then(function (data) {
-    listPosts(data);
-  });
+
+const options = {
+  headers: {
+    "x-apikey": "606d606af55350043100752e",
+  },
+};
+
+fetch(url, options)
+  .then((res) => res.json())
+  .then((data) => listPosts(data));
 
 function listPosts(data) {
   data.forEach(showPost);
