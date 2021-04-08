@@ -47,3 +47,7 @@ label {
 .form :hover {
   opacity: 100%;
 }
+
+.hidden {
+  display: none;
+}
