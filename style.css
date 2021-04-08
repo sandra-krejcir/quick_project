@@ -30,3 +30,20 @@ label {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.form {
+  margin-top: 20px;
+  height: 40px;
+  color: white;
+  background-color: #0095be;
+  opacity: 75%;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.form :hover {
+  opacity: 100%;
+}
