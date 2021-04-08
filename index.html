@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dum-dum scribbles</title>
+  </head>
+  <body>
+    <header>
+      <h1>Dum-dum scribbles</h1>
+      <p class="intro">
+        Do you have some interesting/fun/dumb thoughts or facts? <br />Please,
+        do share and make this lockdown more bearable :)
+      </p>
+      <nav>
+        <a href="posts.html">Make a post</a>
+      </nav>
+    </header>
+    <main>
+      <template id="allPosts">
+        <article>
+          <h4></h4>
+          <h2></h2>
+          <p class="info"></p>
+          <p class="content"></p>
+          <a href="comments.html"
+            ><form id="addComm">
+              <label for="content">What do you think?</label>
+              <textarea
+                id="content"
+                type="text"
+                name="content"
+                placeholder="Add your comment..."
+              ></textarea></form
+          ></a>
+        </article>
+      </template>
+    </main>
+    <script src=""></script>
+  </body>
+</html>
