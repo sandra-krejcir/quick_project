@@ -25,7 +25,7 @@ function showPost(post) {
       ".info"
     ).textContent = `written by ${post.username}, ${post.date}`;
     copy.querySelector(".content").textContent = post.content;
-    copy.querySelector("a").href = `comments.html?id=${post.id}`;
+    copy.querySelector("a").href = `comments.html?id=${post._id}`;
     const parent = document.querySelector("main");
     parent.appendChild(copy);
   }

@@ -1,10 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
-const Id = urlParams.get("id");
+const id = urlParams.get("id");
 
 fetch(
-  "https://kea21s-6eb0.restdb.io/rest/posts/" +
-    articleId +
-    "?fetchchildren=true",
+  "https://kea21s-6eb0.restdb.io/rest/posts/" + id + "?fetchchildren=true",
   {
     method: "GET",
     headers: {
