@@ -26,24 +26,25 @@ function showPost(post) {
     ".info"
   ).textContent = `written by ${post.username}, ${post.date}`;
   document.querySelector(".content").textContent = post.content;
-}
 
-const template = document.querySelector("#commentForm").content;
-post.comments.forEach((comment) => {
-  console.log(comment);
-  const copy = template.cloneNode(true);
-  copy.querySelector("h4").textContent = comment.username;
-  copy.querySelector(".theComm").textContent = comment.content;
-  const parent = document.querySelector("main");
-  parent.appendChild(copy);
-});
-if (post.comments.length == 0) {
-  const copy = template.cloneNode(true);
-  copy.querySelector("h4").textContent = "";
-  copy.querySelector(".theComm").textContent =
-    "Looks like there's no comments yet. Be the first to leave one.";
-  const parent = document.querySelector("main");
-  parent.appendChild(copy);
+  const template = document.querySelector("#commentForm").content;
+
+  post.comments.forEach((comment) => {
+    console.log(comment);
+    const copy = template.cloneNode(true);
+    copy.querySelector("h3").textContent = comment.username;
+    copy.querySelector("#theComm").textContent = comment.content;
+    const parent = document.querySelector("main");
+    parent.appendChild(copy);
+  });
+  if (post.comments.length == 0) {
+    const copy = template.cloneNode(true);
+    copy.querySelector("h3").textContent = "";
+    copy.querySelector("#theComm").textContent =
+      "Looks like there's no comments yet. Be the first to leave one.";
+    const parent = document.querySelector("main");
+    parent.appendChild(copy);
+  }
 }
 
 const form = document.querySelector("form");
@@ -52,8 +53,6 @@ form.addEventListener("submit", userCommented);
 
 function userCommented(evt) {
   evt.preventDefault();
-  console.log(form.elements.username.value);
-  console.log(form.elements.content.value);
 
   const payload = {
     username: form.elements.username.value,
@@ -61,9 +60,9 @@ function userCommented(evt) {
     date: Date.now,
   };
 
-  document.querySelector(".form").disabled = true;
+  console.log(payload);
 
-  fetch(`https://kea21s-6eb0.restdb.io/rest/posts/${Id}/comments`, {
+  fetch(`https://kea21s-6eb0.restdb.io/rest/posts/${id}/comments`, {
     method: "POST",
     headers: {
       "x-apikey": "606d606af55350043100752e",
@@ -75,8 +74,8 @@ function userCommented(evt) {
     .then((data) => {
       const template = document.querySelector("#commentForm").content;
       const copy = template.cloneNode(true);
-      copy.querySelector("h4").textContent = data.username;
-      copy.querySelector(".theComm").textContent = data.content;
+      copy.querySelector("h3").textContent = data.username;
+      copy.querySelector("#theComm").textContent = data.content;
       const parent = document.querySelector("main");
       parent.appendChild(copy);
     });
