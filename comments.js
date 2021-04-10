@@ -72,6 +72,10 @@ function userCommented(evt) {
   })
     .then((res) => res.json())
     .then((data) => {
+      document.querySelector(".form").disabled = false;
+      form.elements.username.value = "";
+      form.elements.content.value = "";
+      document.querySelector("p.hidden").classList.remove("hidden");
       const template = document.querySelector("#commentForm").content;
       const copy = template.cloneNode(true);
       copy.querySelector("h3").textContent = data.username;
