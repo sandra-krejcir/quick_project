@@ -1,3 +1,36 @@
+const urlParams = new URLSearchParams(window.location.search);
+const articleId = urlParams.get("id");
+
+const url = "https://kea-alt-del.dk/t7/api/products/" + id;
+fetch(
+  "https://kea21s-6eb0.restdb.io/rest/posts/" +
+    articleId +
+    "?fetchchildren=true",
+  {
+    method: "GET",
+    headers: {
+      "x-apikey": "606d606af55350043100752e",
+    },
+  }
+)
+  .then((res) => res.json())
+  .then((response) => {
+    showPost(response);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+function showPost(post) {
+  console.log(post);
+  document.querySelector("h4").textContent = post.category;
+  document.querySelector("h2").textContent = post.title;
+  document.querySelector(
+    ".info"
+  ).textContent = `written by ${post.username}, ${post.date}`;
+  document.querySelector(".content").textContent = post.content;
+}
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", userCommented);

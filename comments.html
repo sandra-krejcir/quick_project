@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <template id="allPosts">
+      <article>
+        <h4></h4>
+        <h2></h2>
+        <p class="info"></p>
+        <p class="content"></p>
+      </article>
+    </template>
+
     <div id="form_container">
       <form autocomplete="on" method="POST" data-netlify="true">
         <label for="username"></label>
@@ -32,6 +41,14 @@
       </form>
       <p class="hidden">Thank you for your comment!</p>
     </div>
+
+    <template id="commentForm">
+      <article>
+        <h4></h4>
+        <p id="theComm"></p>
+      </article>
+    </template>
+
     <script src="comments.js"></script>
   </body>
 </html>
