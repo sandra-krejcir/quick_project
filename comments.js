@@ -1,7 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
-const articleId = urlParams.get("id");
+const Id = urlParams.get("id");
 
-const url = "https://kea-alt-del.dk/t7/api/products/" + id;
 fetch(
   "https://kea21s-6eb0.restdb.io/rest/posts/" +
     articleId +
@@ -31,6 +30,24 @@ function showPost(post) {
   document.querySelector(".content").textContent = post.content;
 }
 
+const template = document.querySelector("#commentForm").content;
+post.comments.forEach((comment) => {
+  console.log(comment);
+  const copy = template.cloneNode(true);
+  copy.querySelector("h4").textContent = comment.username;
+  copy.querySelector(".theComm").textContent = comment.content;
+  const parent = document.querySelector("main");
+  parent.appendChild(copy);
+});
+if (post.comments.length == 0) {
+  const copy = template.cloneNode(true);
+  copy.querySelector("h4").textContent = "";
+  copy.querySelector(".theComm").textContent =
+    "Looks like there's no comments yet. Be the first to leave one.";
+  const parent = document.querySelector("main");
+  parent.appendChild(copy);
+}
+
 const form = document.querySelector("form");
 
 form.addEventListener("submit", userCommented);
@@ -43,11 +60,12 @@ function userCommented(evt) {
   const payload = {
     username: form.elements.username.value,
     content: form.elements.content.value,
+    date: Date.now,
   };
 
   document.querySelector(".form").disabled = true;
 
-  fetch("https://kea21s-6eb0.restdb.io/rest/comments", {
+  fetch(`https://kea21s-6eb0.restdb.io/rest/posts/${Id}/comments`, {
     method: "POST",
     headers: {
       "x-apikey": "606d606af55350043100752e",
@@ -55,14 +73,13 @@ function userCommented(evt) {
     },
     body: JSON.stringify(payload),
   })
-    .then((response) => {
-      console.log(response);
-      document.querySelector(".form").disabled = false;
-      form.elements.username.value = "";
-      form.elements.content.value = "";
-      document.querySelector(".hidden").classList.remove("hidden");
-    })
-    .catch((err) => {
-      console.error(err);
+    .then((res) => res.json())
+    .then((data) => {
+      const template = document.querySelector("#commentForm").content;
+      const copy = template.cloneNode(true);
+      copy.querySelector("h4").textContent = data.username;
+      copy.querySelector(".theComm").textContent = data.content;
+      const parent = document.querySelector("main");
+      parent.appendChild(copy);
     });
 }

@@ -8,46 +8,48 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <template id="allPosts">
-      <article>
-        <h4></h4>
-        <h2></h2>
-        <p class="info"></p>
-        <p class="content"></p>
-      </article>
-    </template>
+    <main>
+      <template id="allPosts">
+        <article>
+          <h4></h4>
+          <h2></h2>
+          <p class="info"></p>
+          <p class="content"></p>
+        </article>
+      </template>
 
-    <div id="form_container">
-      <form autocomplete="on" method="POST" data-netlify="true">
-        <label for="username"></label>
-        <input
-          id="username"
-          type="text"
-          name="username"
-          placeholder="Your username"
-          required
-        />
+      <div id="form_container">
+        <form autocomplete="on" method="POST" data-netlify="true">
+          <label for="username"></label>
+          <input
+            id="username"
+            type="text"
+            name="username"
+            placeholder="Your username"
+            required
+          />
 
-        <label for="content"></label>
-        <textarea
-          id="content"
-          type="text"
-          name="content"
-          placeholder="Add your comment..."
-          required
-        ></textarea>
+          <label for="content"></label>
+          <textarea
+            id="content"
+            type="text"
+            name="content"
+            placeholder="Add your comment..."
+            required
+          ></textarea>
 
-        <button class="form">Post</button>
-      </form>
-      <p class="hidden">Thank you for your comment!</p>
-    </div>
+          <button class="form">Post</button>
+        </form>
+        <p class="hidden">Thank you for your comment!</p>
+      </div>
 
-    <template id="commentForm">
-      <article>
-        <h4></h4>
-        <p id="theComm"></p>
-      </article>
-    </template>
+      <template id="commentForm">
+        <article>
+          <h4></h4>
+          <p id="theComm"></p>
+        </article>
+      </template>
+    </main>
 
     <script src="comments.js"></script>
   </body>
