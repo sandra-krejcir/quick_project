@@ -13,21 +13,59 @@ header {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-header a:any-link {
-  color: black;
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+
+article {
+  margin: 1.5vw 3vw 3vw 2vw;
+  background: rgba(81, 208, 212, 0.15);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+  padding: 10px 30px 30px 40px;
+}
+
+.commForm {
+  margin-top: 3vw;
+  width: 50%;
+  background: rgba(81, 208, 212, 0.055);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+  padding: 10px 30px 30px 40px;
+}
+
+.thePost #Info {
+  text-align: right;
+}
+
+.author {
+  font-style: italic;
+  color: rgba(22, 21, 21, 0.637);
+}
+
+h4 {
+  text-transform: uppercase;
+  color: rgba(22, 21, 21, 0.521);
+}
+
+a {
   text-decoration: none;
 }
 
-header a:hover {
+a:any-link {
+  color: black;
+}
+
+a:hover {
   font-size: 1.3vw;
 }
 
 #form_container {
-  margin: 3vw auto 2vw auto;
-  width: 30vw;
-  background: white;
+  margin: 0.5vw 3vw 3vw 2vw;
+  width: 50%;
+  background: rgba(81, 208, 212, 0.055);
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
-  padding: 30px 70px 40px 70px;
+  padding: 10px 30px 30px 40px;
 }
 
 form {
@@ -43,13 +81,17 @@ form ::placeholder {
   font-family: "Ubuntu", sans-serif;
 }
 
-h2 {
-  text-align: center;
-}
-
 form p {
   text-align: center;
   padding-top: 0.5vw;
+}
+
+form input {
+  background: rgba(81, 208, 212, 0.055);
+}
+
+form textarea {
+  background: rgba(81, 208, 212, 0.055);
 }
 
 input:valid,

@@ -5,18 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posts & Comments project</title>
-    <link rel="stylesheet" href="post_css.css" />
+    <link rel="stylesheet" href="comments_css.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="index.html">← Homepage</a>
+        |
+        <a href="posts.html">Make a post →</a>
+      </nav>
+    </header>
     <main>
       <section class="thePost">
         <article>
           <h4></h4>
           <h2></h2>
-          <p class="info"></p>
+          <p id="Info">
+            <span class="author">written by &nbsp;</span
+            ><span class="info"></span>
+          </p>
           <p class="content"></p>
         </article>
       </section>
+
+      <div class="no_comment"></div>
 
       <div id="form_container">
         <form autocomplete="on" method="POST" data-netlify="true">
@@ -44,7 +56,7 @@
       </div>
 
       <template id="commentForm">
-        <article>
+        <article class="commForm">
           <h3></h3>
           <p id="theComm"></p>
         </article>

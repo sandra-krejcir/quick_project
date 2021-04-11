@@ -20,11 +20,11 @@ fetch(
 
 function showPost(post) {
   console.log(post);
-  document.querySelector("h4").textContent = post.category;
+  document.querySelector("h4").textContent = `| ${post.category} |`;
   document.querySelector("h2").textContent = post.title;
   document.querySelector(
     ".info"
-  ).textContent = `written by ${post.username}, ${post.date}`;
+  ).textContent = `${post.username}, ${post.date}`;
   document.querySelector(".content").textContent = post.content;
 
   const template = document.querySelector("#commentForm").content;
@@ -34,15 +34,15 @@ function showPost(post) {
     const copy = template.cloneNode(true);
     copy.querySelector("h3").textContent = comment.username;
     copy.querySelector("#theComm").textContent = comment.content;
-    const parent = document.querySelector("main");
+    const parent = document.querySelector(".no_comment");
     parent.appendChild(copy);
   });
   if (post.comments.length == 0) {
     const copy = template.cloneNode(true);
-    copy.querySelector("h3").textContent = "";
-    copy.querySelector("#theComm").textContent =
-      "Looks like there's no comments yet. Be the first to leave one.";
-    const parent = document.querySelector("main");
+    copy.querySelector("h3").textContent =
+      "Oh, looks like there's no comments yet. ";
+    copy.querySelector("#theComm").textContent = "Be the first to leave one :)";
+    const parent = document.querySelector(".no_comment");
     parent.appendChild(copy);
   }
 }
@@ -57,7 +57,7 @@ function userCommented(evt) {
   const payload = {
     username: form.elements.username.value,
     content: form.elements.content.value,
-    date: Date.now,
+    date: new Date(),
   };
 
   console.log(payload);
