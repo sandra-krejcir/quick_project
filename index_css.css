@@ -60,6 +60,7 @@ a:any-link {
 
 nav a:hover {
   font-size: 1.3vw;
+  text-decoration: underline;
 }
 
 article:hover {
