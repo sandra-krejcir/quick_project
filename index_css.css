@@ -58,7 +58,7 @@ a:any-link {
   color: black;
 }
 
-a:hover {
+nav a:hover {
   font-size: 1.3vw;
 }
 
