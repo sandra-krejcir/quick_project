@@ -5,54 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posts & Comments project</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="post_css.css" />
   </head>
   <body>
-    <div id="form_container">
-      <h2>Post as you wish.</h2>
-      <form autocomplete="on" method="POST" data-netlify="true">
-        <label for="category">CATEGORY</label>
-        <input
-          id="category"
-          type="text"
-          name="category"
-          placeholder="Post category"
-          required
-        />
+    <header>
+      <nav>
+        <a href="index.html">← HOME</a>
+      </nav>
+    </header>
+    <main>
+      <div id="form_container">
+        <h2>Post as you wish.</h2>
+        <form autocomplete="on" method="POST" data-netlify="true">
+          <label for="category">Category</label>
+          <input
+            id="category"
+            type="text"
+            name="category"
+            placeholder="Post category"
+            required
+          />
 
-        <label for="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          name="title"
-          placeholder="Title of the post"
-          required
-        />
+          <label for="title">Title</label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            placeholder="Title of the post"
+            required
+          />
 
-        <label for="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          name="username"
-          placeholder="Your username"
-          required
-        />
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            name="username"
+            placeholder="Your username"
+            required
+          />
 
-        <label for="content">Content</label>
-        <textarea
-          id="content"
-          type="text"
-          name="content"
-          placeholder="What's on your mind?"
-          required
-        ></textarea>
+          <label for="content">Content</label>
+          <textarea
+            id="content"
+            type="text"
+            name="content"
+            placeholder="What's on your mind?"
+            required
+          ></textarea>
 
-        <button class="form">Post</button>
-      </form>
-      <p class="hidden">
-        Thank you for your contribution! <br />Your post is pending approval :)
-      </p>
-    </div>
+          <button class="form">Post</button>
+          <p class="hidden">
+            Thank you for your contribution! <br />Your post is pending approval
+            :)
+          </p>
+        </form>
+      </div>
+    </main>
     <script src="posts.js"></script>
   </body>
 </html>

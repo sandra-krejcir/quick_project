@@ -5,12 +5,13 @@ html {
 }
 
 header {
-  background: rgba(81, 208, 212, 0.548);
+  background: #0095be56;
   padding-top: 1vw;
   padding-left: 1vw;
   padding-right: auto;
   padding-bottom: 1.5vw;
   text-align: center;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 header p {
@@ -23,7 +24,7 @@ main {
   grid-template-columns: auto auto auto;
   column-gap: 1vw;
   row-gap: 1vw;
-  padding-top: 0.5vw;
+  padding-top: 1.5vw;
   padding-left: 1vw;
 }
 
