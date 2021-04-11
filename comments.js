@@ -57,7 +57,6 @@ function userCommented(evt) {
   const payload = {
     username: form.elements.username.value,
     content: form.elements.content.value,
-    date: new Date(),
   };
 
   console.log(payload);
