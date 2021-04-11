@@ -83,7 +83,7 @@ function userCommented(evt) {
       copy.querySelector("h3").textContent = data.username;
       copy.querySelector("#theComm").textContent = data.content;
       copy.querySelector("#date").textContent = data.date;
-      const parent = document.querySelector("main");
+      const parent = document.querySelector(".no_comment");
       parent.appendChild(copy);
     });
 }
