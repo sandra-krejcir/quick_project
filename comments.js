@@ -57,6 +57,7 @@ function userCommented(evt) {
   const payload = {
     username: form.elements.username.value,
     content: form.elements.content.value,
+    date: Date().toLocaleString(),
   };
 
   console.log(payload);

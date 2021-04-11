@@ -14,6 +14,7 @@ function userSubmitted(evt) {
     title: form.elements.title.value,
     username: form.elements.username.value,
     content: form.elements.content.value,
+    date: Date().toLocaleString(),
   };
 
   document.querySelector(".form").disabled = true;
