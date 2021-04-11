@@ -34,6 +34,7 @@ function showPost(post) {
     const copy = template.cloneNode(true);
     copy.querySelector("h3").textContent = comment.username;
     copy.querySelector("#theComm").textContent = comment.content;
+    copy.querySelector("#date").textContent = comment.date;
     const parent = document.querySelector(".no_comment");
     parent.appendChild(copy);
   });
@@ -42,6 +43,7 @@ function showPost(post) {
     copy.querySelector("h3").textContent =
       "Oh, looks like there's no comments yet. ";
     copy.querySelector("#theComm").textContent = "Be the first to leave one :)";
+    copy.querySelector("#date").textContent = "";
     const parent = document.querySelector(".no_comment");
     parent.appendChild(copy);
   }
@@ -80,6 +82,7 @@ function userCommented(evt) {
       const copy = template.cloneNode(true);
       copy.querySelector("h3").textContent = data.username;
       copy.querySelector("#theComm").textContent = data.content;
+      copy.querySelector("#date").textContent = data.date;
       const parent = document.querySelector("main");
       parent.appendChild(copy);
     });
